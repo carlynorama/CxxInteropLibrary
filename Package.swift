@@ -19,9 +19,11 @@ let package = Package(
         .target(
             name: "InteropLibrary",
             dependencies: ["cxxLibrary"]),
+            //swiftSettings: [.interoperabilityMode(.Cxx)]), have tried it both ways.
         .testTarget(
             name: "CxxInteropLibraryTests",
             dependencies: ["InteropLibrary"],
+            //dependencies: ["InteropLibrary", "cxxLibrary"],
             swiftSettings: [.interoperabilityMode(.Cxx)])
     ]
 )

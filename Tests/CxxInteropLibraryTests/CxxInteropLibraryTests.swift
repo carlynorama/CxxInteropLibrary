@@ -1,6 +1,5 @@
 import XCTest
 @testable import InteropLibrary
-//@testable import NumberMaker
 
 final class CxxInteropLibraryTests: XCTestCase {
 
