@@ -2,11 +2,12 @@
 
 ## Begin Project
 
+```
 cd $PROJECT_DIR
 swift package init --type library
 touch README.md
 git init
-
+```
 
 ## Update Package File
 
