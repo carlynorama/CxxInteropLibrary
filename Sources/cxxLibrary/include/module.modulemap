@@ -1,5 +1,3 @@
-//This works where the cxxLibary.h include did not for me. 
-
 module cxxLibrary {
     header "SimpleCxxFunctions.hpp"
 

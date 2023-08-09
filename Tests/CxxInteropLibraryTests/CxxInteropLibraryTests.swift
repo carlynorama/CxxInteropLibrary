@@ -4,6 +4,10 @@ import XCTest
 final class CxxInteropLibraryTests: XCTestCase {
 
     func testCurrentNumber() throws {
-        XCTAssert(NumberMaker().currentNumber() == 5)
+        XCTAssert(ThingCatalog().currentNumber() == 5)
+    }
+    
+    func testCurrentWord() throws {
+        XCTAssert(ThingCatalog().currentWord() == "melodious")
     }
 }
