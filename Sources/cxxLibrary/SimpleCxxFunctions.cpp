@@ -1,8 +1,8 @@
 //
 //  SimpleCxxFunctions.cpp
-//  CppInteropInlineExample
+//  CxxInteropLibrary
 //
-//  Created by Labtanza on 8/9/23.
+//  Created by Carlyn Maw on 8/9/23.
 //
 
 #include "SimpleCxxFunctions.hpp"

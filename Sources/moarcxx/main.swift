@@ -1,8 +1,8 @@
 //
-//  File.swift
-//  
+//  /moarcxx/main.swift
+//  CxxInteropLibrary
 //
-//  Created by Labtanza on 8/9/23.
+//  Created by Carlyn Maw on 8/9/23.
 //
 
 import Foundation
