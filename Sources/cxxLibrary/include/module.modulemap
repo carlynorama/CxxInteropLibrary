@@ -1,0 +1,5 @@
+module cxxLibrary {
+    header "SimpleCxxFunctions.h"
+
+    export *
+}
