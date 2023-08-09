@@ -1,7 +1,6 @@
 //
 //  SimpleCxxFunctions.hpp
-//  CppInteropInlineExample
-//
+//  CppInteropLibrary
 //  Created by Carlyn Maw on 8/9/23.
 //
 
