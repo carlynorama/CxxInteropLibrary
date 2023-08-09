@@ -6,9 +6,14 @@
 //
 
 #include "SimpleCxxFunctions.hpp"
-
+#include <string>
 int myFavoriteNumber() {
     return 5;
+}
+
+
+std::string myFavoriteWord() {
+    return "melodious";
 }
 
 

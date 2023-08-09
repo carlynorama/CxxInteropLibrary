@@ -9,7 +9,9 @@
 #define SimpleCxxFunctions_hpp
 
 #include <stdio.h>
+#include <string>
 
 int myFavoriteNumber();
+std::string myFavoriteWord();
 
 #endif /* SimpleCxxFunctions_hpp */
