@@ -5,7 +5,7 @@
 //  Created by Labtanza on 8/9/23.
 //
 
-#include "SimpleCxxFunctions.h"
+#include "SimpleCxxFunctions.hpp"
 
 int myFavoriteNumber() {
     return 5;
