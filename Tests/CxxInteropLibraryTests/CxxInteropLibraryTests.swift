@@ -5,6 +5,6 @@ import XCTest
 final class CxxInteropLibraryTests: XCTestCase {
 
     func testCurrentNumber() throws {
-        XCTAssert(NumberMaker().currentNumber() == 3)
+        XCTAssert(NumberMaker().currentNumber() == 5)
     }
 }
