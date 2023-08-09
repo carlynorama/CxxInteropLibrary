@@ -34,9 +34,13 @@ module cxxLibrary {
 }
 ```
 
+vs
 
+cxxLibrary.h
 
-
+```
+#incude <cxxLibrary/SimpleCxxFunctions.hpp>
+```
 
 ```
 swift test
