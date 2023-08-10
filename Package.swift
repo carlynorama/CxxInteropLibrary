@@ -8,7 +8,14 @@ let package = Package(
     products: [
         .library(
             name: "cxxLibrary",
-            targets: ["cxxLibrary"]),
+            targets: ["cxxLibrary"],
+            resources: [
+            //.process("resources")]
+            .copy("resources")],
+            exclude: [
+                "resources/REFERENCES.md"
+            ]
+            ),
         .library(
             name: "InteropLibrary",
             targets: ["InteropLibrary"]),

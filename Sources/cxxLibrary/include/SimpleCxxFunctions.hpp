@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <string>
 
-int myFavoriteNumber();
-std::string myFavoriteWord();
+int my_favorite_number();
+std::string my_favorite_word();
 
 #endif /* SimpleCxxFunctions_hpp */
