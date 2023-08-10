@@ -12,17 +12,13 @@ let package = Package(
         .library(
             name: "InteropLibrary",
             targets: ["InteropLibrary"]),
-        .executable(name: "moarcxx", targets: ["moarcxx"])    ],
+        ],
     targets: [
         .target(
             name: "cxxLibrary"),
         .target(
             name: "InteropLibrary",
             dependencies: ["cxxLibrary"],
-            swiftSettings: [.interoperabilityMode(.Cxx)]), //have tried it both ways.
-        .executableTarget(
-            name: "moarcxx",
-            dependencies: ["InteropLibrary"],
             swiftSettings: [.interoperabilityMode(.Cxx)]),
         .testTarget(
             name: "CxxInteropLibraryTests",
