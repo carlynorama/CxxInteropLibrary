@@ -9,10 +9,10 @@ import cxxLibrary
 public struct ThingCatalog {
     public init() {}
     public func currentNumber() -> Int {
-        return Int(myFavoriteNumber())
+        return Int(my_favorite_number())
     }
     
     public func currentWord() -> String {
-        return String(myFavoriteWord())
+        return String(my_favorite_word())
     }
 }

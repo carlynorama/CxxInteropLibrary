@@ -7,12 +7,12 @@
 
 #include "SimpleCxxFunctions.hpp"
 #include <string>
-int myFavoriteNumber() {
+
+int my_favorite_number() {
     return 5;
 }
 
-
-std::string myFavoriteWord() {
+std::string my_favorite_word() {
     return "melodious";
 }
 
