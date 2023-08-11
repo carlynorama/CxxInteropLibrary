@@ -5,16 +5,13 @@ import PackageDescription
 
 let package = Package(
     name: "CxxInteropLibrary",
+    platforms: [
+        .macOS(.v13)
+    ],
     products: [
         .library(
             name: "cxxLibrary",
-            targets: ["cxxLibrary"],
-            resources: [
-            //.process("resources")]
-            .copy("resources")],
-            exclude: [
-                "resources/REFERENCES.md"
-            ]
+            targets: ["cxxLibrary"]
             ),
         .library(
             name: "InteropLibrary",
@@ -22,11 +19,16 @@ let package = Package(
         .executable(name: "moarcxx", targets: ["moarcxx"])    ],
     targets: [
         .target(
-            name: "cxxLibrary"),
+            name: "cxxLibrary",
+            exclude: ["resources/REFERENCES.md"],
+            // puts it in .build/debug/CxxInteropLibrary_cxxLibrary.bundle/resources
+            //resources: [.copy("resources")]
+            resources: [.process("resources")]
+        ),
         .target(
             name: "InteropLibrary",
             dependencies: ["cxxLibrary"],
-            swiftSettings: [.interoperabilityMode(.Cxx)]), //have tried it both ways.
+            swiftSettings: [.interoperabilityMode(.Cxx)]),
         .executableTarget(
             name: "moarcxx",
             dependencies: ["InteropLibrary"],
@@ -34,7 +36,6 @@ let package = Package(
         .testTarget(
             name: "CxxInteropLibraryTests",
             dependencies: ["InteropLibrary"],
-            //dependencies: ["InteropLibrary", "cxxLibrary"],
             swiftSettings: [.interoperabilityMode(.Cxx)])
     ]
 )

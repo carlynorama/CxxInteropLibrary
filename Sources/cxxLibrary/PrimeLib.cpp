@@ -9,6 +9,10 @@
 #include <random>
 #include <string>
 
+//int special_number() {
+//    return 9;
+//}
+
 // Max line is 12 characters long
 const int max_line_length = 16;
 // 10,000th prime is 104729
@@ -27,6 +31,10 @@ int readNthLine(std::ifstream &in, int index) {
     std::getline(in.ignore(max_line_length, ' '), s);
     return std::stoi(s);
 };
+
+uint8_t random_uint8(const uint8_t &min, const uint8_t &max) {
+    return fancy_random(min, max);
+}
 
 // just because.
 // https://stackoverflow.com/questions/5008804/generating-a-random-integer-from-a-range
