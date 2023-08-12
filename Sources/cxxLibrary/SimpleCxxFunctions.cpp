@@ -16,4 +16,9 @@ std::string my_favorite_word() {
     return "melodious";
 }
 
+std::string echo_this(std::string yodel) {
+    return yodel;
+    //return 1
+}
+
 

@@ -18,7 +18,11 @@ public struct ThingCatalog {
         // cppBundleManager = BundleManager(strippedPath, "CxxInteropLibrary_cxxLibrary.bundle")
     }
     
-    
+    public func sendAndReceiveString(send:String) -> String {
+        let received = echo_this(send)
+        return String(received)
+    }
+
     public func currentNumber() -> Int {
         return Int(my_favorite_number())
     }

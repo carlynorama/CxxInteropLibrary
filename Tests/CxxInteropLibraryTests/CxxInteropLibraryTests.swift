@@ -28,6 +28,11 @@ final class CxxInteropLibraryTests: XCTestCase {
         print(value)
         XCTAssert((20...30).contains(value))
     }
+
+    func testStrings() throws {
+        XCTAssertEqual(expression1: ThingCatalog().sendAndReceiveString("Nice to meet you"), 
+                       expression2: "Nice to meet you")
+    }
     
 //    func testChosenPrime() throws {
 //        //Does not find file.
