@@ -8,7 +8,17 @@ import Foundation
 import cxxLibrary
 
 public struct ThingCatalog {
-    public init() {}
+    //let cppBundleManager:BundleManager
+
+    public init() {
+        // let strippedPath = URL(filePath: Bundle.module.bundlePath)
+        //                                         .deletingLastPathComponent()
+        //                                         .absoluteString
+        //                                         //.cString(using: .utf8) vs .utf8
+        // cppBundleManager = BundleManager(strippedPath, "CxxInteropLibrary_cxxLibrary.bundle")
+    }
+    
+    
     public func currentNumber() -> Int {
         return Int(my_favorite_number())
     }

@@ -10,14 +10,22 @@
 class BundleManager {
 
 public:
-    //std::string path_for_resource(std::string name, std::string extension);
+    BundleManager(std::string path, std::string name) {
+        bundle_path = path;
+        this_bundle_name = name;
+    }
 
-    std::string getPath() const SWIFT_COMPUTED_PROPERTY {
+    std::string path() const SWIFT_COMPUTED_PROPERTY {
         return bundle_path;
     }
 
+    std::string name() const SWIFT_COMPUTED_PROPERTY {
+        return this_bundle_name;
+    }
+
+    std::string path_for_resource(std::string name, std::string extension);
+
 private:
     std::string bundle_path;
-    //std::string this_bundle_name;
-}
-
+    std::string this_bundle_name;
+};
