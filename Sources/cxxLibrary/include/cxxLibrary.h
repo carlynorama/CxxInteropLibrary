@@ -1,13 +1,6 @@
-#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>  
 
-
-__BEGIN_DECLS
-
-NSBundle* Package_Target_SWIFTPM_MODULE_BUNDLE(void);
-
-#define SWIFTPM_MODULE_BUNDLE Package_Target_SWIFTPM_MODULE_BUNDLE()
-
-__END_DECLS
+swift::String test_string_import;
 
 #import <PrimeLib.hpp>
 #import <SimpleCxxFunctions.hpp>

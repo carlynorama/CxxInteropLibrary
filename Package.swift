@@ -28,6 +28,7 @@ let package = Package(
         .target(
             name: "InteropLibrary",
             dependencies: ["cxxLibrary"],
+            resources: [.copy("resources")],
             swiftSettings: [.interoperabilityMode(.Cxx)]),
         .executableTarget(
             name: "moarcxx",

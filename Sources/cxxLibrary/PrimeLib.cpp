@@ -52,7 +52,7 @@ int random_prime() { return prime_at(fancy_random(0, 10000)); }
 
 // prime in first 10000 primes at index
 int prime_at(int index) {
-    std::ifstream primesFile("resources/b000040.txt");
+    std::ifstream primesFile("../CxxInteropLibrary_cxxLibrary.bundle/b000040.txt");
     if (primesFile.is_open()) {
         return readNthLine(primesFile, index);
     } else {

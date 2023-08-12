@@ -4,6 +4,7 @@
 //
 //  Created by Carlyn Maw on 8/9/23.
 //
+import Foundation
 import cxxLibrary
 
 public struct ThingCatalog {
@@ -33,6 +34,13 @@ public struct ThingCatalog {
         prime_at(n)
     }
     
+    public func bundlePath() -> String {
+        Bundle.module.bundlePath
+    }
+
+    public func contentsOfFile(name:String, extension:String) {
+        
+    }
     //failed with non-zero exit code
     //  ////CxxInteropLibrary/Sources/InteropLibrary/ThingCatalog.swift:33:9
     //  ////Cannot convert return expression of type 'CUnsignedChar' (aka 'UInt8') to return type 'N'
@@ -45,7 +53,7 @@ public struct ThingCatalog {
 //        fancy_random(min, max)
 //    }
     
-    //Note, when this is Int, Int8, UInt8 get "linker error"
+//     Note, when this is Int, Int8, UInt8 get "linker error"
 //    public func randomNumber(_ min:Int8, _ max:Int8) -> Int8 {
 //        fancy_random(min, max)
 //    }
