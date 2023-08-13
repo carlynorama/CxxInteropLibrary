@@ -23,7 +23,8 @@ let package = Package(
             exclude: ["resources/REFERENCES.md"],
             // puts it in .build/debug/CxxInteropLibrary_cxxLibrary.bundle/resources
             //resources: [.copy("resources")]
-            resources: [.process("resources")]
+            resources: [.process("resources")]//,
+            //cxxSettings: [CXXSetting]?
         ),
         .target(
             name: "InteropLibrary",

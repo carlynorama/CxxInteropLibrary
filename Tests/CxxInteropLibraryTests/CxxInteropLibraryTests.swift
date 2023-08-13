@@ -30,8 +30,8 @@ final class CxxInteropLibraryTests: XCTestCase {
     }
 
     func testStrings() throws {
-        XCTAssertEqual(expression1: ThingCatalog().sendAndReceiveString("Nice to meet you"), 
-                       expression2: "Nice to meet you")
+        XCTAssertEqual(ThingCatalog().sendAndReceiveString(send:"Nice to meet you"), 
+                       "Nice to meet you")
     }
     
 //    func testChosenPrime() throws {

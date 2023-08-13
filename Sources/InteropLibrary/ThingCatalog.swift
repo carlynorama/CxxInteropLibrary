@@ -7,19 +7,19 @@
 import Foundation
 import cxxLibrary
 
+
 public struct ThingCatalog {
-    //let cppBundleManager:BundleManager
+    let cppBundleManager:BundleManager
 
     public init() {
-        // let strippedPath = URL(filePath: Bundle.module.bundlePath)
-        //                                         .deletingLastPathComponent()
-        //                                         .absoluteString
-        //                                         //.cString(using: .utf8) vs .utf8
-        // cppBundleManager = BundleManager(strippedPath, "CxxInteropLibrary_cxxLibrary.bundle")
+        let strippedPath = URL(filePath: Bundle.module.bundlePath)
+                                                .deletingLastPathComponent()
+                                                .absoluteString
+        cppBundleManager = BundleManager(std.string(strippedPath), "CxxInteropLibrary_cxxLibrary.bundle")
     }
     
     public func sendAndReceiveString(send:String) -> String {
-        let received = echo_this(send)
+        let received = echo_this(std.string(send))
         return String(received)
     }
 

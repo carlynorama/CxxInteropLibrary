@@ -1,6 +1,8 @@
 #include <string>
 #include <swift/bridging> //Adds the ability to as teh keywords
 
+
+//#include <SwiftLibrary-Swift.h> //<- this causes fatal error.
 //will know I have the right thing in the header 
 //when the below works? See minute 6:59 in Mix Swift WWDC Video
 //swift::String test_string_import;

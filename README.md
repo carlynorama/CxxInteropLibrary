@@ -39,18 +39,5 @@ was built for newer 'macOS' version (13.0) than being linked (10.13)
     - .copy -> .build/debug/CxxInteropLibrary_cxxLibrary.bundle/resources/b000040.txt
     - see https://forums.swift.org/t/access-a-package-s-bundle-module-from-c-c/63339
 
+- where does this line go, because it crashes compile `#include <SwiftLibrary-Swift.h>`
 
-```
-#import <Foundation/Foundation.h>
-
-/*
-
-
-// In this header, import all the public headers of your framework using statements like `#import <Forest/PublicHeader.h>`
-#import <cxxLibrary/PrimeLib.hpp>
-#import <cxxLibrary/SimpleCxxFunctions.hpp>
-
-
-//see Swift and Cpp showcase https://developer.apple.com/documentation/swift/callingapisacrosslanguageboundaries
-// and also https://forums.swift.org/t/access-a-package-s-bundle-module-from-c-c/63339/2
-```

@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <string>
 
+
 int my_favorite_number();
 std::string my_favorite_word();
 
