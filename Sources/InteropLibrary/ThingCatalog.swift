@@ -18,7 +18,7 @@ public struct ThingCatalog {
         self.primeNumbers = PrimeNumberGenerator(std.string(strippedPath))
     }
 
-        //TODO: why does to be mutating again? Wanted that even before a reference type.
+    //TODO: why does to be mutating again? Wanted that even before a reference type.
     public mutating func nthPrime(n:Int32) -> Int32 {
         primeNumbers.prime_at(n)
     }
@@ -41,6 +41,7 @@ public struct ThingCatalog {
     //MARK: IntType Template Tests
 
     //Did work? Stopped working? 
+    //Had worked, stopped working?
 //    public func randomInt(_ min:Int32, _ max:Int32) -> Int32 {
 //        fancy_random(min, max)
 //    }

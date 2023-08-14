@@ -33,7 +33,7 @@ let package = Package(
         .target(
             name: "InteropLibrary",
             dependencies: ["cxxLibrary"],
-            //any target that uses swift, not just executables.
+            //any target that uses Swift, not just executables.
             swiftSettings: [.interoperabilityMode(.Cxx)]),
         .testTarget(
             name: "CxxInteropLibraryTests",

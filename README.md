@@ -26,7 +26,7 @@ swift run moarcxx
 
 ### cxxLibrary Target
 
-Contains files for a prime number supplier class, see []() for origin. Since the numbers are supplied by a file in the bundle, currently has a workaround to get the Bundle location from the Swift. Do not think that will be the real solution in the future. 
+Contains files for a prime number supplier class, see [CMake blog post](https://www.whynotestflight.com/excuses/cmake-overview/) for origin. Since the numbers are supplied by a file in the bundle, project currently has a workaround to get the Bundle location from the Swift. Do not think that will be the real solution in the future. 
 
 Also has a collection of independent functions for testing different aspects of C++ Interop. 
 
@@ -36,11 +36,11 @@ Swift files. Currently only has the one struct `ThingCatalog` to make it easier 
 
 ## moarcxx
 
-Badly named Swift CLI (since its actually moarswift, really). For nocking out runtime checks. Not useful or full coverage. Will likely be renamed/retooled or just deleted.  
+Badly named Swift CLI (since its actually moarswift, really). For knocking out runtime checks. Not useful or full coverage. Will likely be renamed/retooled or just deleted.  
 
 ## Misc TODO
 
-(also in the code body)
+(more also in the code body)
 
 - pick a naming/case style for Swift-embedded C++
 -  Try adding C++ to tests
