@@ -9,13 +9,16 @@ import cxxLibrary
 
 
 public struct ThingCatalog {
-    let cppBundleManager:BundleManager
+    
+    var primeNumbers:PrimeNumberGenerator
 
     public init() {
-        let strippedPath = URL(filePath: Bundle.module.bundlePath)
-                                                .deletingLastPathComponent()
-                                                .absoluteString
-        cppBundleManager = BundleManager(std.string(strippedPath), "CxxInteropLibrary_cxxLibrary.bundle")
+        let strippedPath = String(URL(filePath: Bundle.module.bundlePath)
+                                                        .deletingLastPathComponent()
+                                                        .absoluteString
+                                                        .trimmingPrefix("file://"))
+        self.primeNumbers = PrimeNumberGenerator(std.string(strippedPath))
+        //self.primeNumbers = PrimeNumberGenerator(std.string("../../"))
     }
     
     public func sendAndReceiveString(send:String) -> String {
@@ -31,29 +34,37 @@ public struct ThingCatalog {
         return String(my_favorite_word())
     }
 
-    public func randomInt(_ min:Int32, _ max:Int32) -> Int32 {
-        fancy_random(min, max)
-    }
+    //These are currently private inside the generator.
+//    public func randomInt(_ min:Int32, _ max:Int32) -> Int32 {
+//        fancy_random(min, max)
+//    }
     
-    public func randomUInt8(_ min:UInt8, _ max:UInt8) -> UInt8 {
-        random_uint8(min, max)
-    }
+//    public func randomUInt8(_ min:UInt8, _ max:UInt8) -> UInt8 {
+//        random_uint8(min, max)
+//    }
+//    
+//    public func randomInt(_ min:CUnsignedChar, _ max:CUnsignedChar) -> CUnsignedChar {
+//        //random_uint8(min, max)
+//        fancy_random(min, max)
+//    }
     
-    public func randomInt(_ min:CUnsignedChar, _ max:CUnsignedChar) -> CUnsignedChar {
-        //random_uint8(min, max)
-        fancy_random(min, max)
+    //TODO: why does swift think this need to be mutating?
+    public mutating func nthPrime(n:Int32) -> Int32 {
+        primeNumbers.prime_at(n)
     }
-    
-    public func nthPrime(n:Int32) -> Int32 {
-        prime_at(n)
+
+    //only works from CLI, but does work from CLI. Can open a file. 
+    public mutating func openAndPrintATestFile(_ testFilePath:String) -> Int {
+        //Int(primeNumbers.openFile())
+        Int(cppTestFileRead(std.string(testFilePath)))
     }
     
     public func bundlePath() -> String {
         Bundle.module.bundlePath
     }
 
-    public func contentsOfFile(name:String, extension:String) {
-        
+    public func getTheCWD() -> String {
+        String(getCurrentWorkingDir())
     }
     //failed with non-zero exit code
     //  ////CxxInteropLibrary/Sources/InteropLibrary/ThingCatalog.swift:33:9

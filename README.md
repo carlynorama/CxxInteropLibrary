@@ -39,5 +39,4 @@ was built for newer 'macOS' version (13.0) than being linked (10.13)
     - .copy -> .build/debug/CxxInteropLibrary_cxxLibrary.bundle/resources/b000040.txt
     - see https://forums.swift.org/t/access-a-package-s-bundle-module-from-c-c/63339
 
-- where does this line go, because it crashes compile `#include <SwiftLibrary-Swift.h>`
 

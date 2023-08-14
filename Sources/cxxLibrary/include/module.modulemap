@@ -1,8 +1,0 @@
-module cxxLibrary {
-    header "PrimeLib.hpp"
-    header "SimpleCxxFunctions.hpp"
-    header "bundle_finder.hpp"
-
-
-    export *
-}

@@ -16,4 +16,7 @@ std::string my_favorite_word();
 
 std::string echo_this(std::string yodel);
 
+int cppTestFileRead(std::string path);
+std::string getCurrentWorkingDir();
+
 #endif /* SimpleCxxFunctions_hpp */

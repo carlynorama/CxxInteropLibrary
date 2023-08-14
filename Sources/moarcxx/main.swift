@@ -8,9 +8,15 @@
 import Foundation
 import InteropLibrary
 
-let catalog = ThingCatalog()
+var catalog = ThingCatalog()
 
 for _ in 0..<catalog.currentNumber() {
     print("\(catalog.currentWord())")
 }
 
+let result = catalog.openAndPrintATestFile("README.md")
+//vs.
+//let result = catalog.openAndPrintATestFile("file:///Users/my_user/..../README.md")
+print(result)
+
+print(catalog.getTheCWD())
