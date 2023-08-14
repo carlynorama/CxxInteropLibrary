@@ -2,7 +2,7 @@
 //  PrimeNumberGenerator.hpp
 //
 //
-//  Created by Labtanza on 8/13/23.
+//  Created by Carlyn Maw on 8/13/23.
 //
 
 #ifndef PrimeNumberGenerator_hpp
@@ -10,9 +10,10 @@
 
 #include <stdio.h>
 #include <string>
-#include <swift/bridging>
+#include <swift/bridging> //allows for annotating
 
-
+//Class standing in for NSBundle for now. The PNG is designed to 
+//load a file from the bundle. 
 class BundleManager {
 public:
     BundleManager(std::string path, std::string name) {
@@ -36,8 +37,10 @@ private:
 };
 
 
-//NOTE: The better path would not necessary be to load a file at all. That is clear.
-//This is to just remind myself that I want to be able to do that, in general.
+//Basic prime number supplier. Written as an object so each method call 
+//doesn't need to be given a Bundle path location by the Swift. Annotated to 
+//be a reference type mostly because I wanted the practice. 
+
 class PrimeNumberGenerator {
 public:
     PrimeNumberGenerator(std::string bundle_path)
@@ -56,6 +59,7 @@ public:
     //TODO:
     //- prime in range
     //- prime in listOfPrimes
+    //- what would be a good practice for an iterator?
     
 private:
     //All for file loading. 
@@ -71,9 +75,9 @@ private:
 
 void pngRetain(PrimeNumberGenerator *);
 void pngRelease(PrimeNumberGenerator *);
+//TODO: Clarify the different use case  seen in example code. 
 //void pngRetain(PrimeNumberGenerator * _Nonnull forest);
 //void pngRelease(PrimeNumberGenerator* _Nonnull forest);
-
 
 
 #endif /* PrimeNumberGenerator_hpp */

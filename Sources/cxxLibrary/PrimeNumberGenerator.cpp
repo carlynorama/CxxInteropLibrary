@@ -2,7 +2,7 @@
 //  PrimeNumberGenerator.cpp
 //  
 //
-//  Created by Labtanza on 8/13/23.
+//  Created by Carlyn Maw on 8/13/23.
 //
 
 #include "PrimeNumberGenerator.hpp"
@@ -11,7 +11,6 @@
 #include <fstream>
 #include <random>
 #include <string>
-#include <iostream>
 
 
 std::string BundleManager::path_for_resource(std::string name, std::string extension) {

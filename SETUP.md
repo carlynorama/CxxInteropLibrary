@@ -77,11 +77,33 @@ The [documentation says](https://www.swift.org/documentation/cxx-interop/#import
 
 >"Swift Package Manager automatically generates a module map file when it finds an umbrella header in a C++ target. Xcode automatically generates a module map file for a framework target, with the module map referencing framework’s public headers. In other cases you might be required to create a module map manually."
 
-I tried making a header file in include called cxxLibrary.h, but the SPM did not in fact seem able to pick up on it in either Xcode or VScode. 
-
+In this case that would look like:
 
 ```
 #incude <cxxLibrary/someCPPFile.hpp>
 ```
 
 
+## After Startup
+
+Note this project uses resources files. They can be enabled in the Package.swift file
+
+```swift
+        .target(
+            name: "cxxLibrary",
+            exclude: ["resources/REFERENCES.md"],
+            resources: [.process("resources")]
+        ),
+        .target(
+            name: "InteropLibrary",
+            dependencies: ["cxxLibrary"],
+            resources: [.copy("resources")],
+            swiftSettings: [.interoperabilityMode(.Cxx)]),
+```
+
+In the above example the C++ bundle's resources will be put directly in the bundle (.process), the Swift bundle will have the resources folder moved with all it's structure (.copy). 
+
+Swift can call the Bundle with Bundle.module. Still working on how to set up an alias to swift::Bundle in the C++, but in the mean time the Swift can hand the C++ a path and it works well enough for testing. There was a way in ObjectiveC 
+
+- https://github.com/apple/swift-package-manager/blob/48192bbdd2800a38a82fa658a244e70b3167ec5d/Sources/Build/BuildDescription/ClangTargetBuildDescription.swift#L304-L364
+- https://forums.swift.org/t/access-a-package-s-bundle-module-from-c-c/63339 
