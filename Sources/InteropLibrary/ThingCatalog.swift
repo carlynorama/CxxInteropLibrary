@@ -7,6 +7,8 @@
 import Foundation
 import cxxLibrary
 
+ 
+
 
 public struct ThingCatalog {
     var primeNumbers:PrimeNumberGenerator
@@ -34,6 +36,7 @@ public struct ThingCatalog {
     
     //TODO: Non string C++ inits from inside XCode.
     //TODO: Find where can find current state o' affairs
+    //TODO: Clarify if ANY std header in C++ Lib means ALL avaiable Swift.
     public func stdTypesCanary() {
         //re-added to keep an eye on:
         let x = std.string("Howdy")
@@ -50,7 +53,25 @@ public struct ThingCatalog {
         
         //Expected 3, could not make template.
         //let z = std.set<Int32, Int32, Int32>(Set(3,2,1))
+        
+        //Generic type 'vector' specialized with too few type parameters (got 1, but expected 2)
+        //No longer valid code.
+        //https://forums.swift.org/t/relating-c-interoperability-to-former-objective-c-interoperability-providing-swift-overlays-for-c-standard-library-types-gsoc/56274/9
+//        //import std this libs not a thing.
+//        let s = std.vector<CInt>() // vector says it need 2 and then can't find template.
+//        s.push_back(1)
+//        s.push_back(2)
+//        s.push_back(3)
+//
+//        for i in 0..<s.size() {
+//            print(s[i])
+//        }
     }
+    
+    //Confirmed still works.
+//    func stdTypeParameter(s:std.string) {
+//        print(s)
+//    }
 
     public func currentNumber() -> Int {
         return Int(my_favorite_number())
