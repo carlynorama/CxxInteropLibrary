@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <string>
 
+<<<<<<< HEAD
 //------------------------------------------------------------------------ INTs
 int my_favorite_number();
 
@@ -24,5 +25,9 @@ std::string my_favorite_word();
 //------------------------------------------------------------ System and FileIO
 int cppTestFileRead(std::string path);
 std::string getCurrentWorkingDir();
+=======
+int my_favorite_number();
+std::string my_favorite_word();
+>>>>>>> main
 
 #endif /* SimpleCxxFunctions_hpp */
