@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "name": "Debug moarcxx",
+            "program": "${workspaceFolder:CxxInteropLibrary}/.build/debug/moarcxx",
+            "args": [],
+            "cwd": "${workspaceFolder:CxxInteropLibrary}",
+            "preLaunchTask": "swift: Build Debug moarcxx"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "name": "Release moarcxx",
+            "program": "${workspaceFolder:CxxInteropLibrary}/.build/release/moarcxx",
+            "args": [],
+            "cwd": "${workspaceFolder:CxxInteropLibrary}",
+            "preLaunchTask": "swift: Build Release moarcxx"
+        }
+    ]
+}
