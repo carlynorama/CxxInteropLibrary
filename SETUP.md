@@ -38,7 +38,7 @@ let package = Package(
         .testTarget(
             name: "CxxInteropLibraryTests",
             dependencies: ["InteropLibrary"],
-            //dependencies: ["InteropLibrary", "cxxLibrary"],
+            //dependencies: ["InteropLibrary", "cxxLibrary"],//No direct tests yet.
             swiftSettings: [.interoperabilityMode(.Cxx)])
     ]
 )

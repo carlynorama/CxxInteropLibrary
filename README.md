@@ -30,11 +30,11 @@ Contains files for a prime number supplier class, see [CMake blog post](https://
 
 Also has a collection of independent functions for testing different aspects of C++ Interop. 
 
-## InteropLibrary
+### InteropLibrary
 
 Swift files. Currently only has the one struct `ThingCatalog` to make it easier to call the C++ in tests and in the CLI.
 
-## moarcxx
+### moarcxx
 
 Badly named Swift CLI (since its actually moarswift, really). For knocking out runtime checks. Not useful or full coverage. Will likely be renamed/retooled or just deleted.  
 
