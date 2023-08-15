@@ -30,6 +30,7 @@ let package = Package(
             name: "InteropLibrary",
             dependencies: ["cxxLibrary"],
             resources: [.copy("resources")],
+            //resources: [.embedInCode("resources")], //!!!
             swiftSettings: [.interoperabilityMode(.Cxx)]),
         .executableTarget(
             name: "moarcxx",
