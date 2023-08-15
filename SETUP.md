@@ -21,19 +21,19 @@ let package = Package(
     name: "CxxInteropLibrary",
     products: [
         .library(
-            name: "cxxLibrary",
-            targets: ["cxxLibrary"]),
-        .library(
             name: "InteropLibrary",
             targets: ["InteropLibrary"]),
+        .executable(name: "moarcxx", targets: ["moarcxx"])
         ],
     targets: [
-        .target(
-            name: "cxxLibrary"),
         .target(
             name: "InteropLibrary",
             dependencies: ["cxxLibrary"],
             //any target that uses Swift, not just executables.
+            swiftSettings: [.interoperabilityMode(.Cxx)]),
+        .executableTarget(
+            name: "moarcxx",
+            dependencies: ["InteropLibrary"],
             swiftSettings: [.interoperabilityMode(.Cxx)]),
         .testTarget(
             name: "CxxInteropLibraryTests",
@@ -52,11 +52,6 @@ The general outline for the project. The key is that the sub folders in the Sour
 ```txt
 └── Project
     └── Sources
-    │   └── cxxLibrary
-    |   |   |── include
-    |   |   |   └── module.modulemap
-    |   |   |   └── someCPPFile.hpp
-    |   |   └── someCPPFile.cpp
     |   └── InteropLibrary
     |       └── SomeSwiftFile.swift
     └── Tests
