@@ -10,25 +10,12 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "cxxLibrary",
-            targets: ["cxxLibrary"]
-            ),
-        .library(
             name: "InteropLibrary",
             targets: ["InteropLibrary"]),
         .executable(name: "moarcxx", targets: ["moarcxx"])    ],
     targets: [
         .target(
-            name: "cxxLibrary",
-            exclude: ["resources/REFERENCES.md"],
-            // puts it in .build/debug/CxxInteropLibrary_cxxLibrary.bundle/resources
-            //resources: [.copy("resources")]
-            resources: [.process("resources")]//,
-            //cxxSettings: [CXXSetting]?
-        ),
-        .target(
             name: "InteropLibrary",
-            dependencies: ["cxxLibrary"],
             resources: [.copy("resources")],
             swiftSettings: [.interoperabilityMode(.Cxx)]),
         .executableTarget(
