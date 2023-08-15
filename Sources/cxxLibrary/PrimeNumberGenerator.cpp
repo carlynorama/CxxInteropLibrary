@@ -6,7 +6,6 @@
 //
 
 #include "PrimeNumberGenerator.hpp"
-#include "SimpleCxxFunctions.hpp"
 
 #include <fstream>
 #include <random>
