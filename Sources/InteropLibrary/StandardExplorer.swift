@@ -6,13 +6,14 @@
 //
 
 
+//TODO: Non string C++ inits from inside XCode.
+//TODO: Find where can find current state o' affairs
+//https://github.com/apple/swift/tree/main/stdlib/public/Cxx ?
+
 import CxxStdlib
 
 //Container for testing what C++ types work with minimal viable import.
 struct StandardExplorer {
-    
-    //TODO: Non string C++ inits from inside XCode.
-    //TODO: Find where can find current state o' affairs
     
     func submitGossip(s:std.string) -> String {
         print(s)
