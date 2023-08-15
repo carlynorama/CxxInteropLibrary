@@ -17,11 +17,13 @@ let package = Package(
         .target(
             name: "InteropLibrary",
             resources: [.copy("resources")],
-            swiftSettings: [.interoperabilityMode(.Cxx)]),
+            swiftSettings: [.interoperabilityMode(.Cxx)]
+        ),
         .executableTarget(
             name: "moarcxx",
             dependencies: ["InteropLibrary"],
-            swiftSettings: [.interoperabilityMode(.Cxx)]),
+            swiftSettings: [.interoperabilityMode(.Cxx)]
+        ),
         .testTarget(
             name: "CxxInteropLibraryTests",
             dependencies: ["InteropLibrary"],
