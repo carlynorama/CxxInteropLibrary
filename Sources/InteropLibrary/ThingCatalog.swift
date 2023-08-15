@@ -4,9 +4,9 @@
 //
 //  Created by Carlyn Maw on 8/9/23.
 //
-import Foundation
-import cxxLibrary
 
+import Foundation   //Needed for Bundle
+import cxxLibrary
 
 public struct ThingCatalog {
     var primeNumbers:PrimeNumberGenerator
@@ -18,7 +18,8 @@ public struct ThingCatalog {
         self.primeNumbers = PrimeNumberGenerator(std.string(strippedPath))
     }
 
-    //TODO: why does to be mutating again? Wanted that even before a reference type.
+    //TODO: why does this have to be mutating again?
+    //Wanted that even before officially a reference type.
     public mutating func nthPrime(n:Int32) -> Int32 {
         primeNumbers.prime_at(n)
     }
@@ -27,31 +28,9 @@ public struct ThingCatalog {
     //MARK: Misc C++ Function Tests
     public func sendAndReceiveString(send:String) -> String {
         let received = echo_this(std.string(send))
-        //TODO: Make an official std types canary.
-        
         return String(received)
     }
-    
-    //TODO: Non string C++ inits from inside XCode.
-    //TODO: Find where can find current state o' affairs
-    public func stdTypesCanary() {
-        //re-added to keep an eye on:
-        let x = std.string("Howdy")
-        
-        //'std.__1.array<_Tp, _Size>' cannot be constructed because it has no accessible initializers
-        //Generic parameter '_Tp' could not be inferred
-        //Command SwiftCompile failed with a nonzero exit code
-        //Below Set: Doesn't complain in XCode, borks compiler.
-        //let test = std.array<Any, Any>(Array([2, 3, 4]))
-        //let y = std.array<UInt8, UInt8>(3, [8, 4, 5])
-        
-        //cant make template.
-        //let y = std.vector<CInt, CInt>(3, [8, 4, 5])
-        
-        //Expected 3, could not make template.
-        //let z = std.set<Int32, Int32, Int32>(Set(3,2,1))
-    }
-
+ 
     public func currentNumber() -> Int {
         return Int(my_favorite_number())
     }
@@ -62,7 +41,6 @@ public struct ThingCatalog {
 
     //MARK: IntType Template Tests
 
-    //Did work? Stopped working? 
     //Had worked, stopped working?
 //    public func randomInt(_ min:Int32, _ max:Int32) -> Int32 {
 //        fancy_random(min, max)
@@ -75,6 +53,24 @@ public struct ThingCatalog {
    public func randomInt(_ min:CUnsignedChar, _ max:CUnsignedChar) -> CUnsignedChar {
        fancy_random(min, max)
    }
+    
+    //MARK: System and FileIO
+    public func bundlePath() -> String {
+        Bundle.module.bundlePath
+    }
+
+    public func getTheCWD() -> String {
+        String(getCurrentWorkingDir())
+    }
+
+    public mutating func openAndPrintATestFile(_ testFilePath:String) -> Int {
+        Int(cppTestFileRead(std.string(testFilePath)))
+    }
+
+}
+
+
+//MARK: Not yet interop-ing
 
 //    //linker error.
 //    public func randomNumber(_ min:CUnsignedInt, _ max:CUnsignedInt) -> CUnsignedInt {
@@ -91,31 +87,10 @@ public struct ThingCatalog {
 //        fancy_random(min, max)
 //    }
 
-    //NOT EXPECTED TO WORK. 
+    //NOT EXPECTED TO WORK.
        //failed with non-zero exit code
     //  ////CxxInteropLibrary/Sources/InteropLibrary/ThingCatalog.swift:33:9
     //  ////Cannot convert return expression of type 'CUnsignedChar' (aka 'UInt8') to return type 'N'
     //    public func randomIntGeneric<N: FixedWidthInteger>(_ min:N, _ max:N) -> N {
     //        fancy_random(min, max)
     //    }
-    
-    
-    //MARK: System and FileIO
-    public func bundlePath() -> String {
-        Bundle.module.bundlePath
-    }
-
-    public func getTheCWD() -> String {
-        String(getCurrentWorkingDir())
-    }
-
-    public mutating func openAndPrintATestFile(_ testFilePath:String) -> Int {
-        //Int(primeNumbers.openFile())
-        Int(cppTestFileRead(std.string(testFilePath)))
-    }
-
-}
-
-
-//MARK: Not yet interop-ing
-
