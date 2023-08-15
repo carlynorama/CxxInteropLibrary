@@ -10,6 +10,11 @@
 //TODO: Find where can find current state o' affairs
 //https://github.com/apple/swift/tree/main/stdlib/public/Cxx ?
 
+// ON COMPILE ()
+//<unknown>:0: warning: the '-enable-experimental-cxx-interop' flag is deprecated; please pass '-cxx-interoperability-mode=' instead
+//<unknown>:0: note: Swift will maintain source compatibility for imported APIs based on the selected compatibility mode, so updating the Swift compiler will not change how APIs are imported
+
+
 import CxxStdlib
 
 //Container for testing what C++ types work with minimal viable import.
@@ -20,6 +25,8 @@ struct StandardExplorer {
         let x = std.string("Did you hear? ")
         return String(x + s)
     }
+
+    
     
 //    public func cecinestpasArray(a:std.array<UInt8, UInt8>) -> Array<UInt8> {
 //        //'std.__1.array<_Tp, _Size>' cannot be constructed because it has no accessible initializers
