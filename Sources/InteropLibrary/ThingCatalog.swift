@@ -12,9 +12,9 @@ public struct ThingCatalog {
     var primeNumbers:PrimeNumberGenerator
 
     public init() {
-        let strippedPath = String(URL(filePath: Bundle.module.bundlePath)
+        let strippedPath = URL(filePath: Bundle.module.bundlePath)
                                                         .deletingLastPathComponent()
-                                                        .path())
+                                                        .path()
         self.primeNumbers = PrimeNumberGenerator(std.string(strippedPath))
     }
 
