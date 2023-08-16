@@ -2,7 +2,7 @@
 //  StandardExplorer.swift
 //  
 //
-//  Created by Labtanza on 8/15/23.
+//  Created by Carlyn Maw on 8/15/23.
 //
 
 
